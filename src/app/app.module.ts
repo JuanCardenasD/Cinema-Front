@@ -35,6 +35,7 @@ import { UsersComponent } from './Components/users/users.component';
 import { RoomsComponent } from './Components/rooms/rooms.component';
 import { SalesComponent } from './Components/sales/sales.component';
 import { AdministrativeComponent } from './Components/administrative/administrative.component';
+import { AvatarModule } from 'ngx-avatars';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { AdministrativeComponent } from './Components/administrative/administrat
     MatTreeModule,
     DragDropModule,
     HttpClientModule,
+    AvatarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
