@@ -16,4 +16,16 @@ export class ApiService {
     })
     )
   }
+
+  public async Post (controller:string, body:string){
+    return await this.api.post(this.Url+controller, body).subscribe((res => {}))
+  }
+
+  public async Delete (controller:string, id:string){
+    return await this.api.delete(this.Url+controller+"/"+id)
+  }
+
+  public async Update (controller:string, id:string, body:string){
+    return await this.api.put(this.Url+controller+"/"+id,body)
+  }
 }
