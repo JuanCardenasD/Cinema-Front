@@ -3,6 +3,14 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FirstFormComponent } from '../forms/first-form/first-form.component';
+import { FormMoviesComponent } from '../forms/form-movies/form-movies.component';
 
 @Component({
   selector: 'app-movies',
@@ -16,7 +24,7 @@ export class MoviesComponent implements OnInit {
   displayedColumns: string[] = [];
   dataSource: MatTableDataSource<any>;
 
-  constructor(public api: ApiService) {
+  constructor(public api: ApiService, public dialog: MatDialog) {
     this.dataSource = new MatTableDataSource();
   }
   ngOnInit(): void {
@@ -35,6 +43,7 @@ export class MoviesComponent implements OnInit {
     for(let colum in data[0]){
       this.displayedColumns.push(colum);
     }
+    this.displayedColumns.push('Acciones');
   }
 
   applyFilter(event: Event) {
@@ -44,5 +53,11 @@ export class MoviesComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openDialog() {
+    this.dialog.open(FormMoviesComponent,{
+
+    });
   }
 }

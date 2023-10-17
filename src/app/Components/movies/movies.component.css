@@ -1,0 +1,18 @@
+.movies-body {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.button-new-movie {
+    margin: 15px 0;
+    display: flex;
+}
+
+.button-new-movie button {
+    background: #c2185b;
+}
+
+tr {
+    text-transform: capitalize;
+}

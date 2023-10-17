@@ -1,0 +1,64 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>New Movie</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Name" formControlName="Name">
+            <mat-error *ngIf="addressForm.controls['Name'].hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Runtime" formControlName="Runtime">
+            <mat-error *ngIf="addressForm.controls['Runtime'].hasError('required')">
+              Runtime is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+              <input matInput [matDatepicker]="ReleaseDate" formControlName="ReleaseDate" placeholder="Choose a date">
+              <mat-error *ngIf="addressForm.controls['ReleaseDate'].hasError('required')">
+                Release Date is <strong>required</strong>
+              </mat-error>
+              <mat-datepicker-toggle matSuffix [for]="ReleaseDate"></mat-datepicker-toggle>
+              <mat-datepicker #ReleaseDate></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Genre" formControlName="Genre">
+            <mat-error *ngIf="addressForm.controls['Genre'].hasError('required')">
+              Genre is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Rating" formControlName="Rating">
+            <mat-error *ngIf="addressForm.controls['Rating'].hasError('required')">
+              Rating is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Director" formControlName="Director">
+            <mat-error *ngIf="addressForm.controls['Director'].hasError('required')">
+              Director is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

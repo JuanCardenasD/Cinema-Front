@@ -35,6 +35,7 @@ export class UsersComponent  implements OnInit{
     for(let colum in data[0]){
       this.displayedColumns.push(colum);
     }
+    this.displayedColumns.push('Acciones');
   }
 
   applyFilter(event: Event) {

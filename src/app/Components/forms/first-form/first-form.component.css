@@ -14,7 +14,7 @@
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .col {
@@ -24,4 +24,10 @@
 
 .col:last-child {
   margin-right: 0;
+}
+
+.mat-mdc-card-header {
+  color: white;
+  display: flex;
+  padding: 16px 16px 0;
 }

@@ -11,22 +11,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { FormComponent } from './Components/form/form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TableComponent } from './Components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-import { TreeComponent } from './Components/tree/tree.component';
 import { MatTreeModule } from '@angular/material/tree';
-import { DragDropComponent } from './Components/drag-drop/drag-drop.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MoviesComponent } from './Components/movies/movies.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -36,23 +31,28 @@ import { RoomsComponent } from './Components/rooms/rooms.component';
 import { SalesComponent } from './Components/sales/sales.component';
 import { AdministrativeComponent } from './Components/administrative/administrative.component';
 import { AvatarModule } from 'ngx-avatars';
+import { FirstFormComponent } from './Components/forms/first-form/first-form.component';
+import { DatePickerComponent } from './Components/date-picker/date-picker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormMoviesComponent } from './Components/forms/form-movies/form-movies.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CinemaComponent,
     MenuComponent,
-    FormComponent,
-    TableComponent,
-    DashboardComponent,
-    TreeComponent,
-    DragDropComponent,
     MoviesComponent,
     TicketsComponent,
     UsersComponent,
     RoomsComponent,
     SalesComponent,
-    AdministrativeComponent
+    AdministrativeComponent,
+    FirstFormComponent,
+    DatePickerComponent,
+    FormMoviesComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +77,9 @@ import { AvatarModule } from 'ngx-avatars';
     DragDropModule,
     HttpClientModule,
     AvatarModule,
+    MatDatepickerModule, 
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
