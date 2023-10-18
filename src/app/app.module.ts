@@ -37,6 +37,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormMoviesComponent } from './Components/forms/form-movies/form-movies.component';
+import { FormUsersComponent } from './Components/forms/form-users/form-users.component';
+import { FormRoomsComponent } from './Components/forms/form-rooms/form-rooms.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { FormMoviesComponent } from './Components/forms/form-movies/form-movies.
     AdministrativeComponent,
     FirstFormComponent,
     DatePickerComponent,
-    FormMoviesComponent
+    FormMoviesComponent,
+    FormUsersComponent,
+    FormRoomsComponent
   ],
   imports: [
     BrowserModule,

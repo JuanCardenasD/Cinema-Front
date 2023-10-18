@@ -17,12 +17,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class FirstFormComponent {
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
-    Name: [null, Validators.required],
-    Runtime: [null, Validators.required],
-    ReleaseDate: [null, Validators.required],
-    Genre: [null, Validators.required],
-    Rating: [null, Validators.required],
-    Director: [null, Validators.required],
+    Show: [null, Validators.required],
+    movie: [null, Validators.required],
+    Row: [null, Validators.required],
+    Column: [null, Validators.required],
+    user: [null, Validators.required]
   });
 
   hasUnitNumber = false;
@@ -30,4 +29,27 @@ export class FirstFormComponent {
   onSubmit(): void {
     alert('Thanks!');
   }
+
+  movies: movie[] = [
+    {value: "Barbie", viewValue: "Barbie"},
+    {value: "Oppenheimer", viewValue: "Oppenheimer"},
+    {value: "Misión Imposible: Sentencia Mortal - Parte 1	", viewValue: "Misión Imposible: Sentencia Mortal - Parte 1	"},
+  ]
+
+  users: user[] = [
+    {value: "Juan", viewValue: "Juan"},
+    {value: "Paola", viewValue: "Paola"},
+  ]
 }
+
+interface movie {
+  value: string;
+  viewValue: string;
+}
+
+interface user {
+  value: string;
+  viewValue: string;
+}
+
+

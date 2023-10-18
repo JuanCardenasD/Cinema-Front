@@ -3,6 +3,9 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { FormRoomsComponent } from '../forms/form-rooms/form-rooms.component';
+import { Dialog } from '@angular/cdk/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-rooms',
@@ -16,7 +19,7 @@ export class RoomsComponent  implements OnInit{
   displayedColumns:string[] = [];
   dataSource: MatTableDataSource<any>;
 
-  constructor(public api: ApiService) {
+  constructor(public api: ApiService, public dialog:MatDialog) {
     this.dataSource = new MatTableDataSource();
   }
   ngOnInit(): void {
@@ -35,7 +38,7 @@ export class RoomsComponent  implements OnInit{
     for(let colum in data[0]){
       this.displayedColumns.push(colum);
     }
-    this.displayedColumns.push('Acciones');
+    this.displayedColumns.push('Actions');
   }
 
   applyFilter(event: Event) {
@@ -45,5 +48,11 @@ export class RoomsComponent  implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openDialog() {
+    this.dialog.open(FormRoomsComponent,{
+
+    });
   }
 }

@@ -1,0 +1,18 @@
+.users-body {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.button-new-user {
+    margin: 15px 0;
+    display: flex;
+}
+
+.button-new-user button {
+    background: #c2185b;
+}
+
+tr {
+    text-transform: capitalize;
+}
