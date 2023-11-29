@@ -7,6 +7,7 @@
       <a mat-list-item href="/Movies">Movies</a>
       <a mat-list-item href="/Users">Users</a>
       <a mat-list-item href="/Rooms">Rooms</a>
+      <!-- <a mat-list-item href="/Login">Login</a> -->
       <!-- <a mat-list-item href="/Sales">Sales</a> -->
       <!-- <a mat-list-item href="/Administrative">Administrative</a> -->
       <!-- <a mat-list-item href="/Form">Form</a> -->
@@ -21,7 +22,10 @@
         </button>
         <span class="tittle-menu">Cinema</span>
       </div>
-      <ngx-avatars name="Juan Cárdenas" bgColor="#FFFFFF" fgColor="#000000"></ngx-avatars>
+      <ngx-avatars mat-button [matMenuTriggerFor]="menu" name="{{userName}}" bgColor="#FFFFFF" fgColor="#000000"></ngx-avatars>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logOut()">Log Out</button>
+      </mat-menu>
     </mat-toolbar>
     <router-outlet></router-outlet>
     <!-- Add Content Here -->

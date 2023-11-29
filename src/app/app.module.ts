@@ -36,9 +36,11 @@ import { DatePickerComponent } from './Components/date-picker/date-picker.compon
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormMoviesComponent } from './Components/forms/form-movies/form-movies.component';
+import { FormMoviesComponent } from './Components/forms/form-movies/FormMoviesComponent';
 import { FormUsersComponent } from './Components/forms/form-users/form-users.component';
 import { FormRoomsComponent } from './Components/forms/form-rooms/form-rooms.component';
+import { LoginComponent } from './Components/login/login.component';
+import { FormLoginComponent } from './Components/forms/form-login/form-login.component';
 
 
 @NgModule({
@@ -56,7 +58,9 @@ import { FormRoomsComponent } from './Components/forms/form-rooms/form-rooms.com
     DatePickerComponent,
     FormMoviesComponent,
     FormUsersComponent,
-    FormRoomsComponent
+    FormRoomsComponent,
+    LoginComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,

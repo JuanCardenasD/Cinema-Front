@@ -1,4 +1,3 @@
-<p>rooms works!</p>
 <div class="rooms-body">
     <mat-form-field>
         <mat-label>Filter</mat-label>
@@ -16,8 +15,8 @@
                 <div *ngIf="disCol == 'Actions'">
                     <th mat-header-cell *matHeaderCellDef> {{disCol}} </th>
                     <td mat-cell *matCellDef="let row">
-                        <a class="opcion-edit"><mat-icon>edit</mat-icon></a>
-                        <a class="opcion-delete"><mat-icon>delete</mat-icon></a>
+                        <a (click)="edit(row)" class="opcion-edit"><mat-icon>edit</mat-icon></a>
+                        <a (click)="deleteid(row.room)" class="opcion-delete"><mat-icon>delete</mat-icon></a>
                     </td>
                 </div>
             </div>
@@ -34,6 +33,6 @@
         <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
     </div>
     <div class="button-new-room">
-        <button mat-button (click)="openDialog()">New Movie</button>
+        <button mat-button (click)="openDialog()">New Room</button>
     </div>
 </div>

@@ -7,7 +7,8 @@ import { RoomsComponent } from './Components/rooms/rooms.component';
 import { SalesComponent } from './Components/sales/sales.component';
 import { AdministrativeComponent } from './Components/administrative/administrative.component';
 import { FirstFormComponent } from './Components/forms/first-form/first-form.component';
-import { FormMoviesComponent } from './Components/forms/form-movies/form-movies.component';
+import { FormMoviesComponent } from './Components/forms/form-movies/FormMoviesComponent';
+import { LoginComponent } from './Components/login/login.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:"Rooms", component: RoomsComponent},
   {path:"Sales", component: SalesComponent},
   {path:"Administrative", component: AdministrativeComponent},
-  {path:"Form", component: FirstFormComponent}
+  {path:"Form", component: FirstFormComponent},
+  {path: "Login", component: LoginComponent}
 ];
 
 @NgModule({

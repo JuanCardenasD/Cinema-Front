@@ -1,8 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+    background-color: #303030;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .opcion-delete mat-icon {
     color: red;
+    cursor: pointer;
+}
+
+.opcion-edit mat-icon {
+    cursor: pointer;
+}
+
+.opcion-delete mat-icon:hover {
+    opacity: 0.2;
+}
+
+.opcion-edit mat-icon:hover {
+    opacity: 0.2;
+}
+
+.col[_ngcontent-ng-c2156933205] {
+    margin-right: 0!important;
+}
+
+.mat-mdc-card-header,
+.mdc-card__actions {
+    padding: 16px 16px 16px!important;
+}
+
+ngx-avatars {
+    cursor: pointer;
 }

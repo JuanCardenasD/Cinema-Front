@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
@@ -8,8 +8,20 @@ import { map, shareReplay } from 'rxjs/operators';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
+
+export class MenuComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
+
+  ngOnInit() {
+
+  }
+
+  logOut() {
+    localStorage.clear();
+    window.location.reload();
+  }
+
+  userName = localStorage.getItem('currentUser');
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Web)
     .pipe(

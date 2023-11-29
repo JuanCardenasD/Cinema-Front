@@ -4,6 +4,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ModalService } from 'src/app/Services/modal.service';
 
 
 @Component({
@@ -40,6 +41,20 @@ export class FirstFormComponent {
     {value: "Juan", viewValue: "Juan"},
     {value: "Paola", viewValue: "Paola"},
   ]
+
+  constructor(
+    private modalService: ModalService
+  ) { }
+
+  title="";
+  action="";
+
+  ngOnInit(): void {
+    this.title = this.modalService.title;
+    this.action = this.modalService.action.value;
+    console.log(this.title);
+    console.log(this.action);
+  }
 }
 
 interface movie {

@@ -6,6 +6,7 @@
     <title>New Component</title>
 </head>
 <body>
-    <app-menu></app-menu>
+    <app-login *ngIf="!online"></app-login>
+    <app-menu *ngIf="online"></app-menu>
 </body>
 </html>

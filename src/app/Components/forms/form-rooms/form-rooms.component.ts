@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 
 import { FormBuilder, Validators } from '@angular/forms';
+import { ModalService } from 'src/app/Services/modal.service';
 
 
 @Component({
@@ -20,5 +21,17 @@ export class FormRoomsComponent {
 
   onSubmit(): void {
     alert('Thanks!');
+  }
+
+  constructor(
+    private modalService: ModalService
+  ) { }
+
+  title="";
+  action="";
+
+  ngOnInit(): void {
+    this.title = this.modalService.title;
+    this.action = this.modalService.action.value;
   }
 }

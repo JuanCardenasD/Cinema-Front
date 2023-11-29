@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
 import { FormUsersComponent } from '../forms/form-users/form-users.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ModalService } from 'src/app/Services/modal.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -18,8 +20,9 @@ export class UsersComponent  implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
   displayedColumns:string[] = [];
   dataSource: MatTableDataSource<any>;
+  element: any;
 
-  constructor(public api: ApiService, public dialog: MatDialog) {
+  constructor(public api: ApiService, public dialog: MatDialog, public modalService: ModalService) {
     this.dataSource = new MatTableDataSource();
   }
   ngOnInit(): void {
@@ -27,6 +30,7 @@ export class UsersComponent  implements OnInit{
       for (let index = 0; index < res.length; index++){
         this.loadTable([res[index]]);
       }
+      console.log(res)
       this.dataSource.data = res;
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
@@ -51,7 +55,49 @@ export class UsersComponent  implements OnInit{
   }
 
   openDialog() {
-    this.dialog.open(FormUsersComponent,{
+    this.modalService.action.next("New");
+    this.modalService.title="New User";
+    this.dialog.open(FormUsersComponent, {
+    });
+  }
+
+  async deleteid(id: number) {
+    console.log(id);
+    this.api.Delete("Users", id)
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        (await this.api.Delete("Users", id)).subscribe(
+          (data) => {
+            console.log('Recurso eliminado con éxito.');
+          },
+          (error) => {
+            console.error('Error al eliminar el recurso: ', error);
+          }
+        );
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        location.reload();
+      }
+    })
+  }
+
+  edit(element: any){
+    this.modalService.action.next("Edit");
+    this.modalService.title="Edit User";
+    console.log(this.modalService.action);
+    console.log(this.modalService.title);
+    this.dialog.open(FormUsersComponent, {
     });
   }
 }
